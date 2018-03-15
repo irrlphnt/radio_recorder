@@ -5,12 +5,12 @@ import time
 import os
 import shutil
 
-stream_url = 'http://media-ice.musicradio.com/HeartSouthWalesMP3?amsparams=playerid:UKRP;skey:1518618684;&amp;awparams=kxsegs:;&amp;kuid=KaaoZWoE'
+stream_url = input("Paste the address of the stream you want to record here:\n")
 
 r = requests.get(stream_url, stream=True)
 timestr = time.strftime("%d%m%Y-%H-%M")
-file_name = "HeartSWFM" + timestr + ".mp3"
-recording_time = 1200 # How long to record for, in seconds
+file_name = input("Type in the name of the radio station:\n") + timestr + ".mp3"
+recording_time = input("How many seconds would you like to record for?")# How long to record for, in seconds
 start_time = time.time()
 end_time = start_time + recording_time
 print(recording_time / 60)
